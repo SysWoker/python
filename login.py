@@ -1,5 +1,6 @@
 from flet import *
 
+
 body = Container(
     Container(
         Stack([
@@ -17,7 +18,8 @@ body = Container(
                             Image(
                                 src='logo2.png',
                                 width=60,
-                            ),padding=padding.only(150,20),
+                                
+                            ),padding=padding.only(145,20,20,40),
                         ),
                         Text(
                             'Login',
@@ -33,9 +35,11 @@ body = Container(
                                 hint_text="Usuario",
                                 border='underline',
                                 color='#fdfdfd',
-                                prefix_icon= icons.EMAIL,
+                                prefix_icon= icons.PERSON,
                                 
                             ),padding=padding.only(25,20),
+                            
+                            
                         ),
                         Container(
                             TextField(
@@ -44,7 +48,7 @@ body = Container(
                                 hint_text='Contraseña',
                                 border='underline',
                                 color='#fdfdfd',
-                                prefix_icon= icons.LOCK,
+                                prefix_icon= icons.LOCK_ROUNDED,
                                 border_color="#009FE3",
                             ),padding=padding.only(25,20),
                         ),
@@ -58,10 +62,10 @@ body = Container(
                         Container(
                             ElevatedButton(
                                 content=Text(
-                                    'Iniciar Seccion',
+                                    'Iniciar Secion',
                                     
-                                ),bgcolor="#312783",color="#e9e9e9",
-                            ),padding=padding.only(25),
+                                ),bgcolor="#312783",color="#e9e9e9",width="250",
+                            ),padding=padding.only(18),
                         ),
                     ]),
                     ),
@@ -79,10 +83,12 @@ body = Container(
 )
 
 
+
 def main(page: Page):
-    page.window_max_width=580
+    page.window_max_width=520
     page.window_max_height=740
     page.padding =0
+    
     page.add(body)
     
     
