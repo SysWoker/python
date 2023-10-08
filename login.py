@@ -89,6 +89,19 @@ def main(page: Page):
     page.window_max_height=740
     page.padding =0
     
+    #script para visualizar los pixel width en pantalla 
+    def page_resize(e):
+        
+        pw.value = f"{page.width} px"
+        pw.update()
+    
+    page.on_resize = page_resize
+    
+    pw = Text(bottom=50, right=50, style="displaySmall")
+    page.overlay.append(pw)
+    page.window_resizable = True
+    
+    
     page.add(body)
     
     
