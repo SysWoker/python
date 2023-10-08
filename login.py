@@ -19,7 +19,7 @@ body = Container(
                                 src='logo2.png',
                                 width=60,
                                 
-                            ),padding=padding.only(145,20,20,40),
+                            ),padding=padding.only(125,20,20,40),
                         ),
                         Text(
                             'Login',
@@ -77,17 +77,18 @@ body = Container(
         ]),
     ),
     padding=110,
-    width=580,
-    height=748,
+    width=520,
+    height=740,
     gradient=LinearGradient(['#312783','#009FE3']),
 )
 
 
 
-def main(page: Page):
-    page.window_max_width=520
-    page.window_max_height=740
-    page.padding =0
+async def main(page: Page):
+    page.window_width = 500
+    page.window_height = 880
+    page.window_resizable = False
+    page.padding = 0
     
     #script para visualizar los pixel width en pantalla 
     def page_resize(e):
@@ -102,7 +103,7 @@ def main(page: Page):
     page.window_resizable = True
     
     
-    page.add(body)
+    await page.add_async(body)
     
     
 app(target=main)
