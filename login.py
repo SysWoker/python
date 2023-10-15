@@ -18,8 +18,8 @@ body = Container(
                             Image(
                                 src='logo2.png',
                                 width=60,
-                                
-                            ),padding=padding.only(125,20,20,40),
+                                scale=1,
+                            ),padding=padding.only(105,20,20,40),
                         ),
                         Text(
                             'Login',
@@ -100,7 +100,7 @@ async def main(page: Page):
     
     pw = Text(bottom=50, right=50, style="displaySmall")
     page.overlay.append(pw)
-    page.window_resizable = True
+    page.window_resizable = False
     
     
     await page.add_async(body)
